@@ -18,6 +18,7 @@ class SingleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.single)
         val id = intent.getIntExtra(CustomViewHolder.ID_KEY, -1)
+        println(id)
         val program = Programs.program[id]
 
         supportActionBar?.title = program.title?.fi

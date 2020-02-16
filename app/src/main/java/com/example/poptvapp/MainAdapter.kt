@@ -12,6 +12,7 @@ import coil.api.load
 import kotlinx.android.synthetic.main.list_row.view.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import okio.blackholeSink
 
 
 class MainAdapter: RecyclerView.Adapter<CustomViewHolder>() {
@@ -27,6 +28,7 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+        holder.id = position
         val program = Programs.program[position]
         val count = position + 1
         holder.view.textView_count.text = count.toString() + "."
