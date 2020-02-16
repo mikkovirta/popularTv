@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PopTvApp</string>
+    <string name="jakso">Jakso:\u0020</string>
+    <string name="sarja">Sarja:\u0020</string>
+    <string name="title">Top10 ohjelmat</string>
+    <string name="valitse">Valitse ajanjakso</string>
+    <string-array name="timeSpan">
+        <item>vuorokausi</item>
+        <item>viikko</item>
+        <item>kuukausi</item>
+    </string-array>
+</resources>
