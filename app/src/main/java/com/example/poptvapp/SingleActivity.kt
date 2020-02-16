@@ -32,7 +32,11 @@ class SingleActivity : AppCompatActivity() {
         singleSeriesDescription.text = program.partOfSeries?.description?.fi
         val url = IMG_URL + program.image?.id + ".png"
 
-        singleImage.load(url)
+        if(program.image?.id != null) {
+            singleImage.load(url)
+        } else {
+            singleImage.load(R.drawable.no_image)
+        }
 
 
     }

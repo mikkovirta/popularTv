@@ -36,12 +36,18 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>() {
         holder.view.textView_description.text = program.description?.fi
         val url = IMG_URL + program.image?.id + ".png"
         val placeholderURL = PLACEHOLDER_URL + program.image?.id + ".png"
-        GlobalScope.launch { val thumb = Coil.get(placeholderURL)
-            holder.view.progress_imageBar.visibility = View.INVISIBLE
-            holder.view.imageView_main.load(url) {
-                crossfade(true)
-                placeholder(thumb)
+        println(" image " + count+ " " + program.image?.id)
+        if (program.image?.id != null) {
+            GlobalScope.launch {
+                val thumb = Coil.get(placeholderURL)
+                holder.view.progress_imageBar.visibility = View.INVISIBLE
+                holder.view.imageView_main.load(url) {
+                    crossfade(true)
+                    placeholder(thumb)
+                }
             }
+        } else {
+            holder.view.imageView_main.load(R.drawable.no_image)
         }
     }
 }
